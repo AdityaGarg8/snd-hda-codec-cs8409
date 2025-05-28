@@ -18,6 +18,4 @@ clean:
 	make -C $(KDIR)/build M=$(shell pwd) clean
 
 install:
-	mkdir -p $(KDIR)/updates/
-	cp snd-hda-codec-cs8409.ko $(KDIR)/updates/
-	depmod -a
+	make -C $(KDIR)/build M=$(shell pwd) modules_install
